@@ -1,0 +1,19 @@
+---
+title: "[BOJ/JAVA] 2741 : N 찍기"
+date: 2024-07-26
+categories: [PS]
+tags:
+  [
+    PS, BOJ, 
+  ]
+---
+
+## 🤔Problem
+
+
+## 🧐Solving
+```java
+
+```
+
+## 🤓Learned
