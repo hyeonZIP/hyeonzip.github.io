@@ -1,8 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-const isUserColorTheme = localStorage.getItem('color-theme');
-
 const Header = ({ siteTitle, theme, toggleTheme }) => (
   <header
     style={{

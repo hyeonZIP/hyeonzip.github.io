@@ -5,27 +5,37 @@ import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  // 초기 상태를 'light'로 설정
   const [theme, setTheme] = React.useState('light');
 
-  React.useEffect(()=> {
-    if(typeof window !== 'undefined') {
+  // 클라이언트에서만 실행되는 로직
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // 로컬 스토리지에서 사용자 테마 가져오기
       const isUserColorTheme = localStorage.getItem('color-theme');
+      // OS 기본 테마 확인
       const isOsColorTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      const getUserTheme = isUserColorTheme ? isUserColorTheme : isOsColorTheme;
-      //로컬에 저장된 선호 테마가 없으면 현재 os에 적용된 테마를 사용 
+      // 최종 테마 결정
+      const initialTheme = isUserColorTheme || isOsColorTheme;
 
-      setTheme(getUserTheme);
-      document.documentElement.setAttribute('color-theme', getUserTheme);
-      localStorage.setItem('color-theme', getUserTheme);
+      // 상태와 DOM에 테마 적용
+      setTheme(initialTheme);
+      document.documentElement.setAttribute('color-theme', initialTheme);
+      localStorage.setItem('color-theme', initialTheme);
     }
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.documentElement.setAttribute('color-theme', newTheme);
-    localStorage.setItem('color-theme', newTheme);
-  };
+  // 테마 전환 함수
+  const toggleTheme = React.useCallback(() => {
+    setTheme(prevTheme => {
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+      if (typeof window !== 'undefined') {
+        document.documentElement.setAttribute('color-theme', newTheme);
+        localStorage.setItem('color-theme', newTheme);
+      }
+      return newTheme;
+    });
+  }, []);
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -63,4 +73,4 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+export default Layout;
