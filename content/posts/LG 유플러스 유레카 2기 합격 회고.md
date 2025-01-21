@@ -4,6 +4,7 @@ date: "2025-01-18T12:15:00.284Z"
 description: DESCRIPTION디스크립션
 slug: page3
 thumbnail: ./images/lgeureka.png
+tag: 
 ---
 
 # My Markdown Page

@@ -3,6 +3,7 @@ title: My Markdown Page
 date: "2027-01-19T22:12:03.284Z"
 description: This is an example of a Markdown page.
 slug: page2
+tag: null
 ---
 
 훈장등의 영전은 이를 받은 자에게만 효력이 있고, 어떠한 특권도 이에 따르지 아니한다. 누구든지 체포 또는 구속의 이유와 변호인의 조력을 받을 권리가 있음을 고지받지 아니하고는 체포 또는 구속을 당하지 아니한다. 체포 또는 구속을 당한 자의 가족등 법률이 정하는 자에게는 그 이유와 일시·장소가 지체없이 통지되어야 한다.
