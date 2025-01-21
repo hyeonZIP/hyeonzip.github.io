@@ -5,7 +5,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 export default ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <div>
@@ -40,7 +39,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             description
           }
           fields{
