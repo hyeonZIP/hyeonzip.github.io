@@ -6,10 +6,10 @@ slug: page1
 thumbnail: './images/avatar.png'
 ---
 
-# My Markdown Page
+국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 대통령이 궐위되거나 사고로 인하여 직무를 수행할 수 없을 때에는 국무총리, 법률이 정한 국무위원의 순서로 그 권한을 대행한다.
 
-This is an example of a Markdown page. You can use Markdown syntax to format the content of your pages. 
+감사원은 원장을 포함한 5인 이상 11인 이하의 감사위원으로 구성한다. 이 헌법시행 당시의 대법원장과 대법원판사가 아닌 법관은 제1항 단서의 규정에 불구하고 이 헌법에 의하여 임명된 것으로 본다.
 
-## Subheading
+군사법원의 조직·권한 및 재판관의 자격은 법률로 정한다. 저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 대통령은 국가의 안위에 관계되는 중대한 교전상태에 있어서 국가를 보위하기 위하여 긴급한 조치가 필요하고 국회의 집회가 불가능한 때에 한하여 법률의 효력을 가지는 명령을 발할 수 있다.
 
-Here's another section with a subheading. You can use various formatting options such as **bold**, *italic*, and `code` to add emphasis.
+모든 국민은 사생활의 비밀과 자유를 침해받지 아니한다. 국회의원은 그 지위를 남용하여 국가·공공단체 또는 기업체와의 계약이나 그 처분에 의하여 재산상의 권리·이익 또는 직위를 취득하거나 타인을 위하여 그 취득을 알선할 수 없다.
