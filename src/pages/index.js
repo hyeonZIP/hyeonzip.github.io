@@ -6,7 +6,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <div>
-        <h1>@저희 블로그 정상영업 합니다.</h1>
+        <h1>@hyeon</h1>
         {/* 포스트 수 */}
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {/* 존재하는 모든 포스트 반복 생성 */}
