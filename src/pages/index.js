@@ -32,7 +32,7 @@ export default ({ data }) => {
           <div><GatsbyImage image={profileImg} alt="Thumbnail"/></div>
           <div>
             <div class="p-name">@hyeonZIP</div>
-            <div class="p-intro">개발 깎는 청년</div>
+            <div class="p-intro">개발 깎는 노인</div>
             <div> [아이콘 구역]</div>
           </div>
         </div>

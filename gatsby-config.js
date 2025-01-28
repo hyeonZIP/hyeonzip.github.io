@@ -23,7 +23,20 @@ module.exports = {
         path: `${__dirname}/content/posts/images`,
       },
     },
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,14 +44,7 @@ module.exports = {
         path: `${__dirname}/content/posts`,
       },
     },
-    {
-      resolve: `gatsby-remark-images`,
-      options: {
-        maxWidth: 800,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,  
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
