@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug yarn deploy",
+        "runtimeExecutable": "yarn",
+        "runtimeArgs": ["deploy"],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "env": {
+          "DEBUG": "gh-pages*"
+        }
+      }
+    ]
+  }
+  
