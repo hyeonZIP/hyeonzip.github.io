@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `hyeonZIP.github.io`,
+    title: `hyeonZIP.blog`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,

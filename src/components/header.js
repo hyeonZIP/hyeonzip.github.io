@@ -15,8 +15,8 @@ const Header = ({ siteTitle, theme, toggleTheme }) => (
     <Link
       to="/"
       style={{
-        fontSize: `var(--font-sm)`,
-        textDecoration: `none`,
+        fontSize: `var(--font-lg)`,
+        textDecoration: `none`
       }}
     >
       {siteTitle}

@@ -66,9 +66,11 @@ const Layout = ({ children }) => {
             fontSize: `var(--font-sm)`,
           }}
         >
-          © {new Date().getFullYear()} &middot; Built with
+          © hyeonZIP &middot; Refered to
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a href="https://hudi.blog/" style={{fontSize: '14px', textDecoration: 'underline'}}>@hudi</a>
+          {` `}
+          Theme
         </footer>
       </div>
     </>

@@ -25,6 +25,7 @@
 :root[color-theme='light'] {
   --color-background: #fff;
   --color-text: #191919;
+  --color-tag-background: #d4d4d4;
 }
 
 :root[color-theme='dark'] {
@@ -41,14 +42,6 @@ html {
   line-height: var(--line-height-normal);
   overflow-y: scroll;
   background: var(--color-background);
-}
-span{
-  background-color: var(--color-tag-background);
-  border-radius: 50px;
-  font-size: 15px;
-  padding: 8px 10px;
-  margin-right: 7px;
-  margin-bottom: 20px;
 }
 body {
   -moz-osx-font-smoothing: grayscale;
@@ -241,4 +234,44 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: none;
+}
+.p-area{
+  display: flex;
+  padding-top: 50px;
+  align-items: center;
+}
+.p-name{
+  font-size: 25px;
+  font-weight: bold;
+}
+.p-intro{
+  font-size: 19px;
+  padding-top: 5px;
+}
+.i-title{
+  font-size: 35px;
+}
+.i-date{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 15px;
+  color: #979797;
+  font-weight: bold;
+}
+.i-excerpt{
+  font-size: 16px;
+  line-height: 30px;
+}
+.i-tag{
+  background-color: var(--color-tag-background);
+  border-radius: 50px;
+  font-size: 15px;
+  padding: 8px 10px;
+  margin-right: 7px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.selected{
+  background-color: var(--color-text);
+  color: var(--color-background);
 }

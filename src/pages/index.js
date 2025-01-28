@@ -1,25 +1,54 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
 export default ({ data }) => {
+
+  const profileImg = getImage(data.allFile.nodes[0].childImageSharp.gatsbyImageData)
+  const [filteredPosts, setFilteredPosts] = useState(data.allMarkdownRemark.edges)
+  const [selectedTag, setSelectedTag] = useState(null)
+
+  const handleTagClick = (tag) => {
+    if(!tag) return;
+    if(selectedTag === tag){
+      setSelectedTag(null)
+      setFilteredPosts(data.allMarkdownRemark.edges)
+    } else{
+      const filtered = data.allMarkdownRemark.edges.filter(({node})=>{
+        if(!node.frontmatter.tag) return false;
+        const tags = node.frontmatter.tag.split(",").map(t => t.trim());
+        return tags.includes(tag); 
+      })
+      setSelectedTag(tag)
+      setFilteredPosts(filtered)
+    }
+  }
+
   return (
     <Layout>
       <div>
-        <h1>@hyeon</h1>
+        <div class="p-area">
+          <div><GatsbyImage image={profileImg} alt="Thumbnail"/></div>
+          <div>
+            <div class="p-name">@hyeonZIP</div>
+            <div class="p-intro">개발 깎는 청년</div>
+            <div> [아이콘 구역]</div>
+          </div>
+        </div>
         {/* 포스트 수 */}
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+        <h4>{filteredPosts.length} Posts</h4>
         {/* 존재하는 모든 포스트 반복 생성 */}
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+        {filteredPosts.map(({ node }) => (
           <div key={node.id}>
             {/* 글 제목 기본 h3 폰트를 사용하려면 onclick으로 변경*/}
-            <h2><Link to={node.fields.slug}>{node.frontmatter.title}</Link></h2>
+            <Link class="i-title" to={node.fields.slug}>{node.frontmatter.title}</Link>
             {/* 글 날짜 */}
-            <h4 style={{color: '#B7B7B7', fontSize: '0.9em'}}>{node.frontmatter.date}</h4>
+            <div class="i-date">{node.frontmatter.date}</div>
             {/* 글 요약 */}
-            <p>{node.excerpt}</p>
+            <p class="i-excerpt">{node.excerpt}</p>
             {(node.frontmatter.tag != null) ? node.frontmatter.tag.split(",").map((tag) => (
-              <span>{tag}</span>
+              <span onClick={()=>handleTagClick(tag)} class="i-tag" key={tag}>{tag}</span>
             )):""}
             <hr/>
           </div>
@@ -31,6 +60,13 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
+    allFile(filter: {name: {eq: "avatar"}}){
+      nodes{
+        childImageSharp{
+          gatsbyImageData(width: 150, height: 150)
+        }
+      }
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
