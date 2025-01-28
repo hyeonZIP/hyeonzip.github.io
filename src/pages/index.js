@@ -13,12 +13,14 @@ export default ({ data }) => {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             {/* 글 제목 기본 h3 폰트를 사용하려면 onclick으로 변경*/}
-            <h3><Link to={node.fields.slug}>{node.frontmatter.title}</Link></h3>
+            <h2><Link to={node.fields.slug}>{node.frontmatter.title}</Link></h2>
             {/* 글 날짜 */}
-            <h4 style={{color: '#B7B7B7', fontSize: '0.8em'}}>{node.frontmatter.date}</h4>
+            <h4 style={{color: '#B7B7B7', fontSize: '0.9em'}}>{node.frontmatter.date}</h4>
             {/* 글 요약 */}
             <p>{node.excerpt}</p>
-            <p>{node.frontmatter.tag}[태그 위치]</p>
+            {(node.frontmatter.tag != null) ? node.frontmatter.tag.split(",").map((tag) => (
+              <span>{tag}</span>
+            )):""}
             <hr/>
           </div>
         ))}

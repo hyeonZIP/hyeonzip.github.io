@@ -2,6 +2,8 @@ import React, {useState,useEffect,useCallback} from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import "@fontsource/noto-sans-kr"
+import "@fontsource/noto-sans-kr/700.css";
 import "./layout.css"
 
 const Layout = ({ children }) => {
