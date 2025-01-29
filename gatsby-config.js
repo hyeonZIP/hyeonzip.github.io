@@ -20,6 +20,10 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gastby-remark-images-insert-wrapper-attributes`,
+            options: {
+              setCssInWrapper: false,
+            },
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
