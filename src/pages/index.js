@@ -2,6 +2,7 @@ import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
+import PostList from "../components/postList"
 
 export default ({ data }) => {
 
@@ -29,7 +30,7 @@ export default ({ data }) => {
     <Layout>
       <div>
         <div class="p-area">
-          <div><GatsbyImage image={profileImg} alt="Thumbnail"/></div>
+          <div><GatsbyImage image={profileImg} alt="profileImage"/></div>
           <div>
             <div class="p-name">@hyeonZIP</div>
             <div class="p-intro">개발 깎는 노인</div>
@@ -39,20 +40,7 @@ export default ({ data }) => {
         {/* 포스트 수 */}
         <h4>{filteredPosts.length} Posts</h4>
         {/* 존재하는 모든 포스트 반복 생성 */}
-        {filteredPosts.map(({ node }) => (
-          <div key={node.id}>
-            {/* 글 제목 기본 h3 폰트를 사용하려면 onclick으로 변경*/}
-            <Link class="i-title" to={node.fields.slug}>{node.frontmatter.title}</Link>
-            {/* 글 날짜 */}
-            <div class="i-date">{node.frontmatter.date}</div>
-            {/* 글 요약 */}
-            <p class="i-excerpt">{node.excerpt}</p>
-            {(node.frontmatter.tag != null) ? node.frontmatter.tag.split(",").map((tag) => (
-              <span onClick={()=>handleTagClick(tag)} class="i-tag" key={tag}>{tag}</span>
-            )):""}
-            <hr/>
-          </div>
-        ))}
+        <PostList posts={filteredPosts}/>
       </div>
     </Layout>
   )
