@@ -1,8 +1,9 @@
 ---
 title: "[BOJ] 1260번: DFS와 BFS [JAVA]"
 date: "2025-01-31T22:12:03.284Z"
-description: This is an example of a Markdown page.
+thumbnail:
 tag: BOJ,DFS,BFS
+series:
 ---
 
 # 0. 문제 링크
