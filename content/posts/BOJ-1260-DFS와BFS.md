@@ -3,7 +3,7 @@ title: "[BOJ] 1260번: DFS와 BFS [JAVA]"
 date: "2025-01-31T22:12:03.284Z"
 thumbnail:
 tag: BOJ,DFS,BFS
-series:
+series: PS,BOJ
 ---
 
 # 0. 문제 링크
